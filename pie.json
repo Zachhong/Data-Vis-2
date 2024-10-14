@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Australian Employment Success Per Country",
   "width": 400,
   "height": 600,
   "description": "Radial plot showing international undergraduate full-time employment rates by country in 2022.",

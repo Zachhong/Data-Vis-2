@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Australian Employment Outcomes Per University",
   "width": 400,
   "height": 600,
   "data": {

@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Average NAPLAN Numeracy Scores Across States and Year Levels 2023",
   "width": 700,
   "height": 400,
   "data": {
