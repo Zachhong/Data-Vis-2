@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Comparison of Salary Across Degrees (Male versus Female) 2023",
-    "width": 500,
+    "width": 600,
     "height": 400,
     "data": {
       "url": "stacked-bar-data.csv",

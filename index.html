@@ -7,51 +7,127 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="./format.css">
 </head>
+
 <body>
-    <h1>Education and Employment in Australia</h1>
+    <div class="title">
+        <h1>Education and Employment in Australia</h1>
+    </div>
+    
 
-    <!-- Map Visualisation -->
-    <div class="visualisation" id="map"></div>
-    <div class="description" id="mapDescription">This map highlights the percentage of people aged 15-24 who are fully engaged in work and/or study across Australia's states and territories. The darker the shading, the higher the percentage of engagement. This allows for a visual comparison of youth participation in education and employment across regions.</div>
+    <div class="divs">
+        <div class="div-header">Australian Education and Employment</div>
+        <div class="div1">
+            <!-- Map Visualisation -->
+            <div class="visualisation" id="map"></div>
+            <div class="description" id="mapDescription">
+                This map visualises the percentage of Australians engaged in either work or study across different states and territories in 2023. The map reveals disparities in engagement rates, with higher percentages observed in more urbanised regions, particularly along the eastern coast, compared to the rural and remote areas in central and northern Australia.
+                <br> <br>While states like New South Wales and Victoria show relatively high engagement rates (around 83% and higher), areas such as the Northern Territory display notably lower levels of participation. This indicates that more work needs to be done to increase access to education and work opportunities, particularly in rural and remote regions.<br><br>Hover over a state or territory for more information.
 
-    <!-- Bubble Plot Visualisation -->
-    <div class="visualisation" id="bubble"></div>
-    <div class="description" id="bubbleDescription">This bubble plot compares male and female employment outcomes by field of study. The size of the bubbles represents full-time employment percentages, and the colour distinguishes gender, with blue for males and pink for females. The chart helps visualise gender disparities and employment outcomes across different fields.</div>
-
-    <!-- Line Chart Visualisation -->
-    <div class="visualisation" id="line"></div>
-    <div class="description" id="lineDescription">This line chart presents the average NAPLAN scores for Years 3, 5, 7, and 9 over time from 2012 to 2022. It highlights trends in educational performance across these years, allowing for an analysis of how performance has changed over time for each grade level.</div>
-
-    <!-- Stacked Bar Chart Visualisation -->
-    <div class="visualisation" id="stackedBar"></div>
-    <div class="description" id="stackedBarDescription">
-        This horizontal stacked bar chart visualizes the total salaries for different fields of study, split by male and female graduates. It highlights the salary disparities across fields and between genders.
+            </div>
+        </div>
     </div>
 
-    <!-- Slope Chart Visualisation -->
-    <div class="visualisation" id="slope"></div>
-    <div class="description" id="slopeDescription">
-        This slope chart shows the changes in short-term and medium-term employment rates over multiple years. It helps visualize the differences between these employment outcomes across time.
+   
+    <div class="divs">
+        <div class="div-header">Gender Diversity in The Australian Workforce</div>
+        <div class="div2">
+            <!-- Bubble Plot Visualisation -->
+            <div class="visualisation" id="bubble"></div>
+            <div class="description" id="bubbleDescription">
+                This bubble chart illustrates the employment outcomes for males and females across various fields of study in Australia for the year 2023. Each bubble represents the percentage of male and female employment in a specific field of study, with the size of the bubbles corresponding to the percentage of employment within each gender. Blue bubbles indicate male employment, while pink bubbles represent female employment. <br><br>
+The chart highlights differences in employment outcomes between genders in various disciplines. For instance, traditionally male-dominated fields such as engineering and information technology show a higher percentage of male employment, while fields like nursing and education exhibit higher female employment rates. <br><br>
+Try adjusting the slider at the bottom to filter fields of study based on a minimum employment rate threshold, and toggle the dropdown menu to filter by gender if you desire.
+ </div>
+        <div class="div-subheading">Salary</div>
+        <div class="div3">
+            <!-- Stacked Bar Chart Visualisation -->
+            <div class="visualisation" id="stackedBar"></div>
+            <div class="description" id="stackedBarDescription">
+                This stacked bar chart compares the average salaries of males and females across different fields of study in Australia for 2023. Each pair of bars represents a specific field of study, with blue bars showing male salary averages and pink bars representing female salary averages.<br><br>
+The chart reveals significant gender-based salary disparities in several fields. For example, in areas like dentistry, law, and engineering, males tend to earn higher salaries compared to their female counterparts. In contrast, fields such as nursing and social work show smaller salary gaps. This visualisation provides a clear indication of persistent gender pay gaps in various professions, emphasising the need for continued efforts toward achieving pay equity across fields of study.<br><br>
+Hover over a bar to see the specific salary a male / female earnt in that profession.
+</div>
+        </div>
+    </div>
+</div>
+
+    <div class="divs">
+        <div class="div-header">NAPLAN as an Educational Benchmark</div>
+        <div class="div4">
+            <!-- Line Chart Visualisation -->
+            <div class="visualisation" id="line"></div>
+            <div class="description" id="lineDescription">This line chart presents the average NAPLAN results for Australian students across year levels over a 10 year period.<br><br>
+                The chart reveals consistent differences in average scores across year levels, with Year 9 students achieving higher scores on average compared to younger students. Notable fluctuations are seen in certain years, such as the peak in 2017, after which results show a general decline across all levels.<br><br> 
+                This is potentially due to the effects of COVID lockdowns and online learning (which is why 2020 is missing from this dataset).<br><br> 
+                Click on any of the coloured dots in the legend to filter a particular year level’s academic progression.
+                </div>
+                </div>
+        <div class="div5">
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab('tab1')">Reading</button>
+                    <button class="tab-button" onclick="openTab('tab2')">Numeracy</button>
+                </div>
+            
+                <div id="tab1" class="tab-content active">
+                    <!-- Heatmap 1 Visualisation -->
+                    <div class="visualisation" id="heatmap1"></div>
+                </div>
+            
+                <div id="tab2" class="tab-content">
+                    <!-- Heatmap 2 Visualisation -->
+                    <div class="visualisation" id="heatmap2"></div>
+                </div>
+                <div class="heatmaps-desc">
+                    These heatmaps present the average NAPLAN reading and numeracy scores across Australian states and territories for different year levels in 2023. <br><br> 
+The scores are broken down by state and year level, highlighting variations in performance across subjects - notably the Northern Territory shows significantly lower average scores compared to other states, particularly in the earlier year levels. In contrast, states like Victoria and New South Wales generally perform better across all year levels.<br><br> 
+Hover over any section for more information. 
+
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Pie Chart Visualisation -->
-    <div class="visualisation" id="pie"></div>
-    <div class="description" id="pieDescription">
-        This radial plot visualizes the full-time employment rates of international undergraduates by their home countries in 2022. It highlights the distribution of employment rates for students from various countries.
+    <div class="divs">
+        <div class="div-header">Factors Influencing Education and Employment</div>
+        <div class="div6">
+            <!-- Slope Chart Visualisation -->
+            <div class="visualisation" id="slope"></div>
+            <div class="description" id="slopeDescription">
+                This slope chart compares the employment outcomes for graduates from various Australian universities between the years 2016 and 2023.<br><br>  
+Notably universities such as Charles Sturt University and James Cook University show a significant increase in employment rates over the seven-year period. On the other hand, some universities, like Monash University and The University of Sydney remained relatively consistent across the years.<br><br> 
+Click on the coloured dot in the legend to see the particular change in that university’s employment outcomes.               
+        </div>
+        </div>
+        <div class="div-subheading">International Students</div>
+        <div class="div7">
+            <div class="description" id="pieDescription">
+                This chart illustrates the employment success rates of graduates from various countries who have studied in Australia. Each slice represents a different country, with the percentage shown on the outside of each slice indicating the employment success rate for graduates from that country.<br><br> 
+Countries such as Sri Lanka and Hong Kong seem to be the most receptive to Australian graduates, whereas Nepal and Vietnam have lower employment success rates.<br><br> 
+Hover over a slice to see more.
+
+</div>
+
+            <!-- Pie Chart Visualisation -->
+            <div class="visualisation" id="pie"></div>
+        </div>
     </div>
 
-    <!-- Heatmap 1 Visualisation -->
-    <div class="visualisation" id="heatmap1"></div>
-    <div class="description" id="heatmap1Description">
-        This heatmap visualizes the average NAPLAN scores for Years 3, 5, 7, and 9 across different states and territories in Australia.
-    </div>
-
-    <!-- Heatmap 2 Visualisation -->
-    <div class="visualisation" id="heatmap2"></div>
-    <div class="description" id="heatmap2Description">
-        This heatmap visualizes the average NAPLAN scores for Years 3, 5, 7, and 9 across different states and territories in Australia.
+    <div class="divs">
+        <div class="div-header">References and Acknowledgments</div>
+    <div>
+        This dashboard was created by Zachary Hong (33166099), using Vega-Lite for the visualisations. <br><br>
+The datasets can be accessed via the following links: <br><br>
+<a href = "https://www.acara.edu.au/reporting/national-report-on-schooling-in-australia/naplan-national-results">1. ACARA NAPLAN Results</a><br><br>
+<a href = "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/personal-income-australia/latest-release">2. ABS Income Reports</a> <br><br>    
+<a href = "https://www.qilt.edu.au/surveys/Data-Visualisation/gos-l">3. QILT Graduate Outcome Survey</a> <br><br>
+I acknowledge that OpenAI’s ChatGPT was used as a tool in the creation of the visualisations. 
+</div>        
     </div>
 
     <script type="text/javascript">
@@ -78,6 +154,28 @@
 
         // Embed the heatmap 2 visualisation
         vegaEmbed('#heatmap2', 'heatmap2.json').catch(console.error);
+        
+        // Tabs 
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(tabName).classList.add('active');
+
+            const formattedTabName = tabName === 'tab1' ? 'Reading' : 'Numeracy';
+
+            const activeButton = [...buttons].find(button => button.textContent.trim() === formattedTabName);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+            }
     </script>
 </body>
 </html>

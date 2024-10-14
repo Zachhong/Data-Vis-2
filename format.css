@@ -1,22 +1,158 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "DM Sans", sans-serif;
     margin: 0;
     padding: 20px;
     text-align: center;
+    background-color: #d2d2d2;
 }
+
+.title {
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #3c3c3c;
+    background-color: #ffffff;
+    padding: 20px;
 }
+
 .visualisation {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
 }
+
 .description {
     width: 80%;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 40px;
     font-size: 16px;
+}
+
+.divs {
+    background-color: white;
+    padding: 20px;
+    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.div1 {
+    justify-content: space-between;
+    display: flex;
+}
+
+.div-header {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3c3c3c;
+    padding: 10px;
+    border: 2px solid #3c3c3c;
+}
+
+.divs:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.div-subheading {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    padding: 10px;
+    background-color: #3c3c3c;
+}
+
+.div3 {
+    justify-content: space-between;
+    display: flex;
+}
+
+.div4 {
+    justify-content: space-between;
+    display: flex;
+}
+
+.div5 {
+    justify-content: space-between;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabs-container {
+    margin: 25px;
+    width: 100%;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #3c3c3c;
+    width: 100%;
+}
+
+.tab-button {
+    font-family: 'DM Sans';
+    padding: 10px 20px;
+    border: none;
+    color: #333;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 1;
+    width: 100%;
+}
+
+.tab-button:hover {
+    background-color: #eaeaea;
+}
+
+.tab-button.active {
+    background-color: #3c3c3c;
+    border-bottom: none; 
+    font-weight: bold;
+    color: #ffffff; 
+    z-index: 50;
+}
+
+.tab-button.active:hover {
+    background-color: #727272;
+}
+
+.tab-content {
+    display: none; 
+    padding: 20px;
+    border-top: none; 
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-content.active {
+    display: block; 
+}
+
+.div6 {
+    justify-content: space-between;
+    display: flex;
+}
+
+.div7 {
+    justify-content: space-between;
+    display: flex;
 }
