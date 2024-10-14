@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education and Employment in Australia</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="stylesheet" type="text/css" href="./format.css">
+</head>
+<body>
+    <h1>Education and Employment in Australia</h1>
+
+    <!-- Map Visualisation -->
+    <div class="visualisation" id="map"></div>
+    <div class="description" id="mapDescription">This map highlights the percentage of people aged 15-24 who are fully engaged in work and/or study across Australia's states and territories. The darker the shading, the higher the percentage of engagement. This allows for a visual comparison of youth participation in education and employment across regions.</div>
+
+    <!-- Bubble Plot Visualisation -->
+    <div class="visualisation" id="bubble"></div>
+    <div class="description" id="bubbleDescription">This bubble plot compares male and female employment outcomes by field of study. The size of the bubbles represents full-time employment percentages, and the colour distinguishes gender, with blue for males and pink for females. The chart helps visualise gender disparities and employment outcomes across different fields.</div>
+
+    <!-- Line Chart Visualisation -->
+    <div class="visualisation" id="line"></div>
+    <div class="description" id="lineDescription">This line chart presents the average NAPLAN scores for Years 3, 5, 7, and 9 over time from 2012 to 2022. It highlights trends in educational performance across these years, allowing for an analysis of how performance has changed over time for each grade level.</div>
+
+    <!-- Stacked Bar Chart Visualisation -->
+    <div class="visualisation" id="stackedBar"></div>
+    <div class="description" id="stackedBarDescription">
+        This horizontal stacked bar chart visualizes the total salaries for different fields of study, split by male and female graduates. It highlights the salary disparities across fields and between genders.
+    </div>
+
+    <!-- Slope Chart Visualisation -->
+    <div class="visualisation" id="slope"></div>
+    <div class="description" id="slopeDescription">
+        This slope chart shows the changes in short-term and medium-term employment rates over multiple years. It helps visualize the differences between these employment outcomes across time.
+    </div>
+
+    <!-- Pie Chart Visualisation -->
+    <div class="visualisation" id="pie"></div>
+    <div class="description" id="pieDescription">
+        This radial plot visualizes the full-time employment rates of international undergraduates by their home countries in 2022. It highlights the distribution of employment rates for students from various countries.
+    </div>
+
+    <!-- Heatmap 1 Visualisation -->
+    <div class="visualisation" id="heatmap1"></div>
+    <div class="description" id="heatmap1Description">
+        This heatmap visualizes the average NAPLAN scores for Years 3, 5, 7, and 9 across different states and territories in Australia.
+    </div>
+
+    <!-- Heatmap 2 Visualisation -->
+    <div class="visualisation" id="heatmap2"></div>
+    <div class="description" id="heatmap2Description">
+        This heatmap visualizes the average NAPLAN scores for Years 3, 5, 7, and 9 across different states and territories in Australia.
+    </div>
+
+    <script type="text/javascript">
+        // Embed the map visualisation
+        vegaEmbed('#map', 'map.json').catch(console.error);
+
+        // Embed the bubble plot visualisation
+        vegaEmbed('#bubble', 'bubble.json').catch(console.error);
+
+        // Embed the line chart visualisation
+        vegaEmbed('#line', 'line.json').catch(console.error);
+
+        // Embed the stacked bar chart visualisation
+        vegaEmbed('#stackedBar', 'stacked-bar.json').catch(console.error);
+
+        // Embed the slope chart visualisation
+        vegaEmbed('#slope', 'slope.json').catch(console.error);
+
+        // Embed the pie chart visualisation
+        vegaEmbed('#pie', 'pie.json').catch(console.error);
+
+        // Embed the heatmap 1 visualisation
+        vegaEmbed('#heatmap1', 'heatmap1.json').catch(console.error);
+
+        // Embed the heatmap 2 visualisation
+        vegaEmbed('#heatmap2', 'heatmap2.json').catch(console.error);
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "data": {
+      "url": "line.csv",
+      "format": {"type": "csv"}
+    },
+    "layer": [{
+        "mark": {
+            "type": "line",
+            "point": {"size": 75, "filled": true}
+        },
+        "encoding": {
+            "x": {
+                "field": "Year",
+                "type": "ordinal",
+                "axis": {
+                "title": "Year",
+                "labelAngle": 45
+                }
+            },
+            "y": {
+                "field": "Score",
+                "type": "quantitative",
+                "axis": {"title": "NAPLAN Score"},
+                "scale": {"domain": [550, 590]}
+            },
+            "color": {
+                "field": "Year Level",
+                "type": "nominal",
+                "legend": {"title": "Year Level"}
+            },
+            "opacity":{
+                "condition": {
+                    "param": "click",
+                    "value": 1
+                },
+                "value": 0.2
+            },
+            "tooltip": [
+                {"field": "Year", "type": "ordinal", "title": "Year"},
+                {"field": "Year Level", "type": "nominal", "title": "Year Level"},
+                {"field": "Score", "type": "quantitative", "title": "NAPLAN Score"}
+            ]
+        },
+        "selection": {
+            "click": {
+                "type": "multi",
+                "fields": ["Year Level"],
+                "bind": "legend"
+            }
+        }}],
+    "config": {
+      "line": {
+        "strokeWidth": 3
+      },
+      "axis": {
+        "grid": true
+      }
+    }
+    
+  }
+  
