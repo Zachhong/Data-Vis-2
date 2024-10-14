@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 600,
+  "description": "Radial plot showing international undergraduate full-time employment rates by country in 2022.",
+  "data": {
+    "url": "pie.csv",
+    "format": {"type": "csv"}
+  },
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"},
+      "encoding": {
+        "tooltip": [
+          {"field": "Country", "type": "nominal", "title": "Country"},
+          {"field": "Employment Rate", "type": "quantitative", "title": "Percentage of Australian graduate employment", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": 10},
+      "encoding": {
+        "text": {"field": "Employment Rate", "type": "quantitative", "format": ".1f"}
+      }
+    }
+  ],
+  "encoding": {
+    "theta": {"field": "Employment Rate", "type": "quantitative", "stack": true},
+    "radius": {
+      "field": "Employment Rate",
+      "scale": {"type": "sqrt", "zero": true, "rangeMin": 20}
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+      "legend": {"title": "Country"}
+    }
+  }
+}

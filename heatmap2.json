@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 700,
+  "height": 400,
+  "data": {
+    "url": "heatmap2.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"fold": ["Year 3", "Year 5", "Year 7", "Year 9"], "as": ["Year", "NAPLAN Score"]}
+  ],
+  "encoding": {
+    "y": {"field": "State", "type": "ordinal"},
+    "x": {"field": "Year", "type": "ordinal"}
+  },
+  "layer": [
+    {
+      "mark": "rect",
+      "encoding": {
+        "color": {
+          "field": "NAPLAN Score",
+          "type": "quantitative",
+          "title": "Average Numeracy Score",
+          "scale": {"range": ["#ffeb99", "#ff0000"]},
+          "legend": {"direction": "horizontal", "gradientLength": 120}
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal", "title": "Year Level"},
+          {"field": "State", "type": "nominal", "title": "State"},
+          {"field": "NAPLAN Score", "type": "quantitative", "title": "Average NAPLAN Numeracy Score"}
+        ]
+      }
+    },
+    {
+      "mark": "text",
+      "encoding": {
+        "text": {"field": "NAPLAN Score", "type": "quantitative"},
+        "color": {
+          "condition": {"test": "datum['NAPLAN Score'] < 500", "value": "black"},
+          "value": "white"
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {"grid": true, "tickBand": "extent"}
+  }
+}

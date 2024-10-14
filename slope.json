@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+  "height": 600,
+  "data": {
+    "url": "slope.csv",
+    "format": {"type": "csv"}
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "size": 100,
+          "filled": true
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "labelAngle": 0,
+            "labelPadding": 10
+          }
+        },
+        "y": {
+          "field": "Employment Rate",
+          "type": "quantitative",
+          "scale": {"domain": [70, 92]},  
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "title": null
+          }
+        },
+        "detail": {
+          "field": "University",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "University",
+          "type": "nominal",
+          "legend": {
+            "title": "University",
+            "orient": "right"
+          },
+          "scale": {"scheme": "category20"}
+        },
+        "tooltip": [  
+          {"field": "University", "type": "nominal", "title": "University"},
+          {"field": "Employment Rate", "type": "quantitative", "title": "Employment Rate"},
+          {"field": "Year", "type": "ordinal", "title": "Year"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "dy": -5
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Employment Rate",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Employment Rate",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+        "color": {
+          "field": "University",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "grid": false
+    }
+  }
+}

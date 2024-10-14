@@ -1,0 +1,59 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "data": {
+      "url": "stacked-bar-data.csv",
+      "format": {"type": "csv"}
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Salary",
+        "type": "quantitative",
+        "title": "Total Salary"
+      },
+      "y": {
+        "field": "Field of Study",
+        "type": "nominal",
+        "title": "Field of Study"
+      },
+      "color": {
+        "field": "Gender",
+        "type": "nominal",
+        "scale": {
+          "domain": ["Female Salary", "Male Salary"],
+          "range": ["#ff69b4", "#1f77b4"]
+        },
+        "title": "Gender"
+      },
+      "tooltip": [
+        {"field": "Field of Study", "type": "nominal", "title": "Field of Study"},
+        {
+          "field": "Salary",
+          "type": "quantitative",
+          "title": "Salary",
+          "format": "$,.0f"
+        },
+        {
+          "field": "Gender",
+          "type": "nominal",
+          "title": "Gender",
+          "scale": {
+            "domain": ["Female Salary", "Male Salary"],
+            "range": ["Female", "Male"]
+          }
+        }
+      ]
+    },
+
+    "config": {
+      "view": {
+        "stroke": "transparent"
+      },
+      "axis": {
+        "grid": false
+      }
+    }
+  }
+  
